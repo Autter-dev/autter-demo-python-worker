@@ -63,31 +63,35 @@ Some tests use expected-failure markers. They document known broken behavior whi
 
 ## Challenges
 
-| Challenge | Difficulty | Category | Expected Autter review angle |
-| --- | --- | --- | --- |
-| [Retry logic reprocesses successful jobs](./challenges/retry-logic-reprocesses-successful-jobs.md) | High | Reliability | idempotency and state transition risk |
-| [Missing idempotency on job submission](./challenges/missing-idempotency-on-job-submission.md) | Medium | Reliability | duplicate side effects |
-| [Webhook callback lacks signature verification](./challenges/webhook-callback-lacks-signature-verification.md) | High | Security | SSRF-style risk and trust boundary issue |
-| [Failed jobs lose original error context](./challenges/failed-jobs-lose-original-error-context.md) | Medium | Observability | observability regression |
-| [Worker processes jobs from wrong organization](./challenges/worker-processes-jobs-from-wrong-organization.md) | High | Authorization | tenant isolation bug |
-| [File processing accepts unsafe paths](./challenges/file-processing-accepts-unsafe-paths.md) | Medium | Security | path traversal risk |
-| [Queue visibility timeout causes double processing](./challenges/queue-visibility-timeout-causes-double-processing.md) | High | Reliability | concurrency risk |
-| [LLM task prompt builder allows instruction injection](./challenges/llm-task-prompt-builder-allows-instruction-injection.md) | Medium | AI safety | prompt injection risk |
+| Challenge                                                                                                                    | Difficulty | Category      | Expected Autter review angle             |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------- | ---------------------------------------- |
+| [Retry logic reprocesses successful jobs](./challenges/retry-logic-reprocesses-successful-jobs.md)                           | High       | Reliability   | idempotency and state transition risk    |
+| [Missing idempotency on job submission](./challenges/missing-idempotency-on-job-submission.md)                               | Medium     | Reliability   | duplicate side effects                   |
+| [Webhook callback lacks signature verification](./challenges/webhook-callback-lacks-signature-verification.md)               | High       | Security      | SSRF-style risk and trust boundary issue |
+| [Failed jobs lose original error context](./challenges/failed-jobs-lose-original-error-context.md)                           | Medium     | Observability | observability regression                 |
+| [Worker processes jobs from wrong organization](./challenges/worker-processes-jobs-from-wrong-organization.md)               | High       | Authorization | tenant isolation bug                     |
+| [File processing accepts unsafe paths](./challenges/file-processing-accepts-unsafe-paths.md)                                 | Medium     | Security      | path traversal risk                      |
+| [Queue visibility timeout causes double processing](./challenges/queue-visibility-timeout-causes-double-processing.md)       | High       | Reliability   | concurrency risk                         |
+| [LLM task prompt builder allows instruction injection](./challenges/llm-task-prompt-builder-allows-instruction-injection.md) | Medium     | AI safety     | prompt injection risk                    |
 
 ## Recommended PR description
 
 ```markdown
 ## What changed
+
 - Fixed the selected challenge
 - Added or updated regression coverage
 
 ## Why
+
 - The previous implementation allowed the broken behavior described in `/challenges/...`
 
 ## Validation
+
 - pytest
 
 ## Risks
+
 - Note any behavior that Autter should review carefully
 ```
 
